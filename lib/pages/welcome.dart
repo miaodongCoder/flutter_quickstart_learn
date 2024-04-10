@@ -6,11 +6,6 @@ import 'package:flutter_quickstart_learn/pages/login.dart';
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
 
-  void onToLogin(context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const LoginPage()));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +16,7 @@ class WelcomePage extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 38),
             child: Text(
-              "Browse & Order All Products at Any Time",
+              "让我们一起跟着 陈老师 , \n带你体验 AI 的魅力~",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 20,
@@ -54,7 +49,7 @@ class WelcomePage extends StatelessWidget {
                 TextButton(
                   onPressed: () => onToLogin(context),
                   child: const Text(
-                    "Skip",
+                    "跳过",
                     style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w300,
@@ -70,7 +65,7 @@ class WelcomePage extends StatelessWidget {
 
                 // Get Started
                 ButtonWidget(
-                  text: "Get Started",
+                  text: "开始",
                   height: 42,
                   widget: 140,
                   radius: 32,
@@ -82,5 +77,9 @@ class WelcomePage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void onToLogin(context) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
   }
 }

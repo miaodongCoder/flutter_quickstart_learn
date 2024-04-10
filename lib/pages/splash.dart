@@ -11,11 +11,11 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  int number = 3;
+  int number = 5;
 
   // 倒计时
   Future<void> _countdown() async {
-    const int duration = 3;
+    const int duration = 5;
     for (int i = 0; i < duration; i++) {
       await Future.delayed(const Duration(seconds: 1), () {
         if (mounted == true) {
@@ -26,8 +26,7 @@ class _SplashPageState extends State<SplashPage> {
       });
       // 倒计时结束, 进入 welcome
       if (number == 0) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const WelcomePage()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const WelcomePage()));
       }
     }
   }
@@ -74,7 +73,7 @@ class _SplashPageState extends State<SplashPage> {
 
               // 文字
               const Text(
-                'Online Market',
+                'AI 大模型构建中...',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 22,

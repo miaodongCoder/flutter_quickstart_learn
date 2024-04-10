@@ -9,4 +9,5 @@ class AssetsImages {
   static const iconMapPng = 'assets/images/icon_map.png';
   static const iconPaymentPng = 'assets/images/icon_payment.png';
   static const iconUserPng = 'assets/images/icon_user.png';
+  static const iconLotusPng = 'assets/images/icon_lotus.png';
 }
