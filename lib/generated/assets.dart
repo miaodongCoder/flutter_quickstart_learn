@@ -31,4 +31,5 @@ class Assets {
   static const String imagesIconUser = 'assets/images/icon_user.png';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesWelcome = 'assets/images/welcome.png';
+
 }
