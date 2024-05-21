@@ -5,14 +5,14 @@ import 'package:flutter_quickstart_learn/common/extension/widget_extension.dart'
 import 'package:flutter_quickstart_learn/pages/image_page.dart';
 
 /// AI 绘制页:
-class AIPage extends StatefulWidget {
-  const AIPage({Key? key}) : super(key: key);
+class SecondAIPage extends StatefulWidget {
+  const SecondAIPage({Key? key}) : super(key: key);
 
   @override
-  State<AIPage> createState() => _AIPageState();
+  State<SecondAIPage> createState() => _SecondAIPageState();
 }
 
-class _AIPageState extends State<AIPage> {
+class _SecondAIPageState extends State<SecondAIPage> {
   Color blueColor = const Color(0xff5590f6);
   TextEditingController controller = TextEditingController();
 
@@ -28,7 +28,7 @@ class _AIPageState extends State<AIPage> {
     );
   }
 
-  // 主视图
+  // 主视图:
   Widget _buildMainView() {
     return Container(
       padding: const EdgeInsets.all(15),
