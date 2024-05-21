@@ -28,7 +28,7 @@ class _AIPageState extends State<AIPage> {
     );
   }
 
-  // 主视图
+  // 主视图:
   Widget _buildMainView() {
     return Container(
       padding: const EdgeInsets.all(15),
@@ -44,6 +44,17 @@ class _AIPageState extends State<AIPage> {
 
   Widget _buildBottomButtonPanel() {
     return BrnBottomButtonPanel(
+      iconButtonList: [
+        //构造Icon按钮
+        BrnVerticalIconButton(
+          name: '清除',
+          iconWidget: const Icon(Icons.delete_outline),
+          onTap: () {
+            debugPrint("清除按钮被点击");
+            controller.clear();
+          },
+        )
+      ],
       mainButtonName: '生成 AI 模型',
       mainButtonOnTap: () {
         Duration duration = const Duration(seconds: 5);
@@ -59,17 +70,6 @@ class _AIPageState extends State<AIPage> {
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ImagePage()));
         });
       },
-      iconButtonList: [
-        //构造Icon按钮
-        BrnVerticalIconButton(
-          name: '清除',
-          iconWidget: const Icon(Icons.delete_outline),
-          onTap: () {
-            debugPrint("清除按钮被点击");
-            controller.clear();
-          },
-        )
-      ],
     );
   }
 
@@ -100,6 +100,16 @@ class _AIPageState extends State<AIPage> {
     ].toColumn();
   }
 
+  Widget _buildTitle(String title) {
+    return Text(
+      title,
+      style: const TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+      ),
+    );
+  }
+
   /// 左侧蓝条:
   Widget _buildBlueGapLineWidget({double? top}) {
     return Container(
@@ -114,16 +124,6 @@ class _AIPageState extends State<AIPage> {
           bottomRight: Radius.circular(2),
           topRight: Radius.circular(2),
         ),
-      ),
-    );
-  }
-
-  Widget _buildTitle(String title) {
-    return Text(
-      title,
-      style: const TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
       ),
     );
   }
@@ -155,12 +155,12 @@ class _AIPageState extends State<AIPage> {
     );
   }
 
-  // 选择模型:
-  Widget _buildSelectedModel() {
-    List<String> tagList = ['真实细节', '动漫增强', '艺术增强', '动漫质感', '真实质感'];
+  // 绘图模式:
+  Widget _buildDrawMode() {
+    List<String> tagList = ['快速模式', '普通模式'];
     return BrnSelectTag(
       tags: tagList,
-      isSingleSelect: false,
+      isSingleSelect: true,
       spacing: 10,
       verticalSpacing: 10,
       selectedTagBackgroundColor: blueColor,
@@ -168,12 +168,12 @@ class _AIPageState extends State<AIPage> {
     );
   }
 
-  // 绘图模式:
-  Widget _buildDrawMode() {
-    List<String> tagList = ['快速模式', '普通模式'];
+  // 选择模型:
+  Widget _buildSelectedModel() {
+    List<String> tagList = ['真实细节', '动漫增强', '艺术增强', '动漫质感', '真实质感'];
     return BrnSelectTag(
       tags: tagList,
-      isSingleSelect: true,
+      isSingleSelect: false,
       spacing: 10,
       verticalSpacing: 10,
       selectedTagBackgroundColor: blueColor,
